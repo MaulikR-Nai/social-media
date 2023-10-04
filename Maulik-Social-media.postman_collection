@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "15d5ad88-8bbb-4e52-a980-1940d136c6e1",
+		"name": "Social-media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30260967"
+	},
+	"item": [
+		{
+			"name": "Post Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Hi this is second Post",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/HP/Desktop/7d34d9d53640af5cfd2614c57dfa7f13.png"
+						}
+					]
+				},
+				"url": "{{base_url}}posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{base_url}}posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "This is Third Post  Comment",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base_url}}posts/2/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "Save Like",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base_url}}posts/2/like"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Like",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}posts/1/2/like",
+					"host": [
+						"{{base_url}}posts"
+					],
+					"path": [
+						"1",
+						"2",
+						"like"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment Like",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/comments/4/like"
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}comments/2/4/like",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{base_url}}comments/2/4/like"
+			},
+			"response": []
+		}
+	]
+}
